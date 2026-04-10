@@ -1,16 +1,19 @@
-// There are 2 ways to accept user input
+/*
+Constants (a variable that cant be changed)
+*/
 
-// 1. Easy but non professional way = window prompt
+const PI = 3.14159;
+let radius;
+let circumference;
 
-let username_test_1 = window.prompt(`whats ur un?`);
-
-console.log(username_test_1);
-
-// 2. Professional way = html textbox
-let username_test_2;
-
-document.getElementById("mySubmit").onclick = function(){
-    username_test_2 = document.getElementById("myText").value;
-    document.getElementById("myH1").textContent = `Hello ${username_test_2}`
+//If the button gets clicked run function
+document.getElementById(`mySubmit`).onclick = function(){
+    //Get the radius from the input field
+    radius = document.getElementById(`myText`).value;
+    radius = Number(radius);
+    circumference = 2* PI* radius;
+    // Change the textcontent of H1 to the following
+    document.getElementById("myH1").textContent = `circle = ${circumference}`;
 
 }
+console.log(circumference);
